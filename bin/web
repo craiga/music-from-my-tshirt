@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -ex
+
+if [ -z "$DEBUG" ]
+then
+    python manage.py check --deploy --fail-level WARNING
+fi
+
+gunicorn music_from_my_tshirt.wsgi --log-file -
