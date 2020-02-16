@@ -1,6 +1,6 @@
 # Music From My T-Shirt
 
-[]![CircleCI](https://img.shields.io/circleci/build/github/craiga/music-from-my-tshirt.svg)](https://app.circleci.com/github/craiga/music-from-my-tshirt/pipelines)
+[![CircleCI](https://img.shields.io/circleci/build/github/craiga/music-from-my-tshirt.svg)](https://app.circleci.com/github/craiga/music-from-my-tshirt/pipelines)
 
 Share the music from your t-shirt!
 
