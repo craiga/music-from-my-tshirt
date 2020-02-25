@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "cypress": "$(npm bin)/cypress",
+    "wait-on": "$(npm bin)/wait-on",
+    "prettier": "$(npm bin)/prettier"
+  },
+  "dependencies": {
+    "cypress": "^3.8.2",
+    "prettier": "^1.19.1",
+    "wait-on": "^4.0.0"
+  }
+}

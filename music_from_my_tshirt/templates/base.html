@@ -1,0 +1,24 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}Music From My T-Shirt{% endblock %}</title>
+    {% block style %} {% endblock %}
+  </head>
+  <body>
+    <h1>{% block heading %}Music From My T-Shirt{% endblock %}</h1>
+
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+        {{ message }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% block content %} {% endblock %}
+  </body>
+
+  {% block script %} {% endblock %}
+</html>

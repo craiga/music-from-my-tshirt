@@ -1,3 +1,8 @@
 /db.sqlite3
 /.env
 /pylintrc.txt
+/node_modules/
+/cypress/plugins/
+/cypress/support/
+/cypress/videos/
+/cypress/screenshots/

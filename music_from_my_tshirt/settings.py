@@ -27,6 +27,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.sites",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",
     "music_from_my_tshirt",
 ]
 
@@ -45,7 +49,10 @@ ROOT_URLCONF = "music_from_my_tshirt.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            # workaround for https://github.com/pennersr/django-allauth/issues/370
+            "music_from_my_tshirt/templates"
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -70,6 +77,17 @@ DATABASES = {
         "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
+
+
+# Authentication
+# https://docs.djangoproject.com/en/stable/topics/auth/customizing/
+
+AUTH_USER_MODEL = "music_from_my_tshirt.User"
+AUTHENTICATION_BACKENDS = [
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+]
+LOGIN_REDIRECT_URL = "/"
 
 
 # Password validation
@@ -120,8 +138,8 @@ SECURE_HSTS_PRELOAD = not DEBUG
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_SSL_REDIRECT = not DEBUG
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = not DEBUG
+CSRF_COOKIE_SECURE = not DEBUG
 X_FRAME_OPTIONS = "DENY"
 SECURE_REFERRER_POLICY = "same-origin"
 
@@ -142,6 +160,28 @@ class IPv4List(list):
 
 
 INTERNAL_IPS = IPv4List(os.environ.get("INTERNAL_IP_CIDR", "127.0.0.1/32"))
+
+
+# Sites (required for django-allauth)
+# https://docs.djangoproject.com/en/stable/ref/contrib/sites/
+
+SITE_ID = 1
+
+
+# django-allauth
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_AUTHENTICATION_METHOD = "email"
+ACCOUNT_UNIQUE_EMAIL = True
+ACCOUNT_EMAIL_VERIFICATION = "none"
+ACCOUNT_FORMS = {
+    "signup": "music_from_my_tshirt.forms.SignUpForm",
+    "login": "music_from_my_tshirt.forms.LoginForm",
+}
 
 
 # Configure Django App for Heroku.
