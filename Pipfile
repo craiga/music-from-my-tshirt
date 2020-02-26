@@ -18,6 +18,7 @@ gunicorn = "*"
 django-heroku = "*"
 sentry-sdk = "*"
 django-debug-toolbar = "*"
+django-allauth = "*"
 
 [requires]
 python_version = "3.8"
