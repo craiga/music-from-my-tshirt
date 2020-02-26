@@ -51,6 +51,7 @@ jobs:
       - run:
            name: run end-to-end tests
            command: |
+             printf "DEBUG=1\n" > .env
              pipenv run python manage.py migrate
              pipenv run python manage.py runserver & npm run wait-on http://localhost:8000
              npm run cypress run
