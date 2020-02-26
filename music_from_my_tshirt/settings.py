@@ -123,6 +123,20 @@ USE_TZ = True
 STATIC_URL = "/static/"
 
 
+# Email
+# https://docs.djangoproject.com/en/stable/topics/email/
+
+EMAIL_HOST = os.environ.get("EMAIL_HOST")
+EMAIL_PORT = os.environ.get("EMAIL_PORT", 25)
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = os.environ.get("EMAIL_SECURITY", "").upper() == "TLS"
+EMAIL_USE_SSL = os.environ.get("EMAIL_SECURITY", "").upper() == "SSL"
+DEFAULT_FROM_EMAIL = os.environ.get(
+    "DEFAULT_FROM_EMAIL", "noreply@musicfrommytshirt.com"
+)
+
+
 # Ignore 404s
 # https://docs.djangoproject.com/en/stable/ref/settings/#std:setting-IGNORABLE_404_URLS
 
