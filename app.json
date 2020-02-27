@@ -1,8 +1,5 @@
 {
-  "addons": [
-    "heroku-postgresql",
-    "scheduler"
-  ],
+  "addons": ["heroku-postgresql", "scheduler"],
   "buildpacks": [
     {
       "url": "heroku/python"
@@ -10,9 +7,9 @@
   ],
   "description": "",
   "env": {
-      "SECRET_KEY": {
-          "generator": "secret"
-      }
+    "SECRET_KEY": {
+      "generator": "secret"
+    }
   },
   "formation": {
     "web": {
@@ -20,7 +17,6 @@
     }
   },
   "name": "rough-trade-calendar",
-  "scripts": {
-  },
+  "scripts": {},
   "stack": "heroku-18"
 }
