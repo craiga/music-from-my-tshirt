@@ -24,4 +24,16 @@ describe("Authentication", () => {
     cy.contains("button", "Sign In").click();
     cy.contains("Successfully signed in");
   });
+  it("Cannot sign up with the same email as an existing user.", () => {
+    cy.visit("/");
+    cy.contains("Sign Up").click();
+    cy.contains("Email")
+      .click()
+      .type("existing-user@example.com");
+    cy.contains("Password")
+      .click()
+      .type("Some Complicated Password");
+    cy.contains("button", "Sign Up").click();
+    cy.contains("A user is already registered with this e-mail address");
+  });
 });

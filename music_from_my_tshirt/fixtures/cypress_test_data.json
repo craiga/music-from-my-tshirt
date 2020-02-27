@@ -1,0 +1,8 @@
+[
+  {
+    "model": "music_from_my_tshirt.user",
+    "fields": {
+      "email": "existing-user@example.com"
+    }
+  }
+]
