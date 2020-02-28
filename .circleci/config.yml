@@ -56,7 +56,7 @@ jobs:
              pipenv run python manage.py migrate
              pipenv run python manage.py loaddata cypress_test_data
              pipenv run python manage.py runserver & npm run wait-on http://localhost:8000
-             npm run cypress run
+             timeout 5m npm run cypress run
 
       - store_test_results:
           path: test-results
