@@ -62,7 +62,9 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-            ]
+                "music_from_my_tshirt.context_processors.sentry_dsn",
+            ],
+            "string_if_invalid": "ERROR: '%s' is invalid." if DEBUG else "",
         },
     }
 ]
