@@ -6,6 +6,8 @@ import re
 
 import dj_database_url
 import django_heroku
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -196,6 +198,12 @@ ACCOUNT_FORMS = {
     "signup": "music_from_my_tshirt.forms.SignUpForm",
     "login": "music_from_my_tshirt.forms.LoginForm",
 }
+
+
+# Sentry
+# https://docs.sentry.io/platforms/python/django/
+
+sentry_sdk.init(dsn=os.environ.get("SENTRY_DSN"), integrations=[DjangoIntegration()])
 
 
 # Configure Django App for Heroku.
