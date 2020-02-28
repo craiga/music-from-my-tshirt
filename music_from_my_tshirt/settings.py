@@ -13,7 +13,7 @@ from sentry_sdk.integrations.django import DjangoIntegration
 # Do this as early as possible to start reporting errors.
 # https://docs.sentry.io/platforms/python/django/
 
-SENTRY_DSN = os.environ.get("SENTRY_DSN")
+SENTRY_DSN = os.environ.get("SENTRY_DSN", "")
 
 sentry_sdk.init(dsn=SENTRY_DSN, integrations=[DjangoIntegration()])
 
