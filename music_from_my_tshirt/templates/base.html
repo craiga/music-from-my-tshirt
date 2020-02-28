@@ -20,5 +20,13 @@
     {% endif %} {% block content %} {% endblock %}
   </body>
 
+  <script
+    src="https://browser.sentry-cdn.com/5.12.4/bundle.min.js"
+    integrity="sha384-1mOjLccPe18oBECej92DbE5SVA4k96pJSrB8Apra0TXOATvFxoAUleTrTxalU46I"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    Sentry.init({ dsn: "{{ sentry_dsn }}" });
+  </script>
   {% block script %} {% endblock %}
 </html>
