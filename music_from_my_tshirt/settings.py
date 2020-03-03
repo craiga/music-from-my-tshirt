@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "enforce_host.EnforceHostMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -72,6 +73,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "music_from_my_tshirt.context_processors.sentry_dsn",
+                "music_from_my_tshirt.context_processors.canonical_host",
             ],
             "string_if_invalid": "ERROR: '%s' is invalid." if DEBUG else "",
         },
@@ -209,6 +211,12 @@ ACCOUNT_FORMS = {
     "signup": "music_from_my_tshirt.forms.SignUpForm",
     "login": "music_from_my_tshirt.forms.LoginForm",
 }
+
+
+# Enforce Host
+# https://github.com/dabapps/django-enforce-host
+
+ENFORCE_HOST = os.environ.get("CANONICAL_HOST")
 
 
 # Configure Django App for Heroku.

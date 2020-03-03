@@ -19,6 +19,7 @@ django-heroku = "*"
 sentry-sdk = "*"
 django-debug-toolbar = "*"
 django-allauth = "*"
+django-enforce-host = "*"
 
 [requires]
 python_version = "3.8"
