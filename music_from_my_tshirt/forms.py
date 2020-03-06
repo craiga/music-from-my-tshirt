@@ -1,7 +1,8 @@
 """Forms."""
 
-from allauth.account import forms as allauth_forms
 from django.contrib.auth import forms as auth_forms
+
+from allauth.account import forms as allauth_forms
 
 from music_from_my_tshirt import models
 
