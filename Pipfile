@@ -20,6 +20,7 @@ sentry-sdk = "*"
 django-debug-toolbar = "*"
 django-allauth = "*"
 django-enforce-host = "*"
+django-model-utils = "*"
 
 [requires]
 python_version = "3.8"

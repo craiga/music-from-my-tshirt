@@ -1,6 +1,7 @@
 """Forms."""
 
 from allauth.account import forms as allauth_forms
+from django import forms
 from django.contrib.auth import forms as auth_forms
 
 from music_from_my_tshirt import models
@@ -28,3 +29,10 @@ class LoginForm(allauth_forms.LoginForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields["login"].label = "Email"
+
+
+class ShareSongForm(forms.ModelForm):
+    class Meta:
+        model = models.Song
+        fields = ["artist", "song", "url"]
+        widgets = {"artist": forms.TextInput(), "song": forms.TextInput()}

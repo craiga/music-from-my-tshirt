@@ -4,5 +4,12 @@
     "fields": {
       "email": "existing-user@example.com"
     }
+  },
+  {
+    "model": "music_from_my_tshirt.user",
+    "fields": {
+      "password": "pbkdf2_sha256$180000$z6nWJLjVX0SY$W+jSGZjP6Sk5YaN0XGBAz2jdEh8UHPeCNtq+eIvqstU=",
+      "email": "test-user@example.com"
+    }
   }
 ]
