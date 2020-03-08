@@ -20,6 +20,8 @@ sentry-sdk = "*"
 django-debug-toolbar = "*"
 django-allauth = "*"
 django-enforce-host = "*"
+django-model-utils = "*"
+faker = "*"
 
 [requires]
 python_version = "3.8"
