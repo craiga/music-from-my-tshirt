@@ -1,0 +1,6 @@
+{% extends 'base.html' %} {% block content %} {% for song in song_list %}
+<h1><a href="{{ song.url }}">{{ song.title }} by {{ song.artist }}</a></h1>
+<p>{{ song.created }}</p>
+{% empty %}
+<h1>User hasn't shared any songs yet!</h1>
+{% endfor %} {% endblock %}

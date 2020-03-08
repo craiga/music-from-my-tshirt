@@ -42,10 +42,12 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "debug_toolbar",
     "music_from_my_tshirt",
 ]
 
 MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "enforce_host.EnforceHostMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -218,6 +220,12 @@ ACCOUNT_FORMS = {
 # https://github.com/dabapps/django-enforce-host
 
 ENFORCE_HOST = os.environ.get("CANONICAL_HOST")
+
+
+# Application configuration
+
+# Maximum number of songs which appear on a users' profile.
+USER_PROFILE_SONGS_PER_PAGE = int(os.environ.get("USER_PROFILE_SONGS_PER_PAGE", 100))
 
 
 # Configure Django App for Heroku.

@@ -35,5 +35,5 @@ class LoginForm(allauth_forms.LoginForm):
 class ShareSongForm(forms.ModelForm):
     class Meta:
         model = models.Song
-        fields = ["artist", "song", "url"]
-        widgets = {"artist": forms.TextInput(), "song": forms.TextInput()}
+        fields = ["artist", "title", "url"]
+        widgets = {"artist": forms.TextInput(), "title": forms.TextInput()}

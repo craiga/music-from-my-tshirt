@@ -15,5 +15,35 @@
       "email": "test-user@example.com",
       "username": "test-user"
     }
+  },
+  {
+    "model": "music_from_my_tshirt.song",
+    "fields": {
+      "title": "Underwater Record Store",
+      "artist": "Penelope Isles",
+      "url": "https://penelopeisles.bandcamp.com/track/underwater-record-store",
+      "created": "2019-10-01T00:00:00Z",
+      "user": 2
+    }
+  },
+  {
+    "model": "music_from_my_tshirt.song",
+    "fields": {
+      "title": "Guns Germs Steel",
+      "artist": "Hoodlum Shouts",
+      "url": "https://poisoncityrecords.bandcamp.com/track/guns-germs-steel",
+      "created": "2012-03-28T00:00:00Z",
+      "user": 2
+    }
+  },
+  {
+    "model": "music_from_my_tshirt.song",
+    "fields": {
+      "title": "Barbie Girl",
+      "artist": "Aqua",
+      "url": "https://www.youtube.com/watch?v=ZyhrYis509A",
+      "created": "1999-03-31T00:00:00Z",
+      "user": 1
+    }
   }
 ]

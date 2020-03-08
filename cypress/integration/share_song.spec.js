@@ -12,7 +12,7 @@ describe("Share a song", () => {
     cy.contains("label", "Artist")
       .click()
       .type("Tankerville");
-    cy.contains("label", "Song")
+    cy.contains("label", "Title")
       .click()
       .type("Bible Bashers Hitler Youth");
     cy.contains("label", "URL")

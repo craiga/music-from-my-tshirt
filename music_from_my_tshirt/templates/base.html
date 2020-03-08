@@ -21,7 +21,7 @@
 
     <p><a href="{% url 'share_song' %}">Share a Song</a></p>
     {% if user.is_authenticated %}
-    <p>Logged in as {{ user.email }}</p>
+    <p><a href="{% url 'user_profile' user.username %}">View Profile</a></p>
     <p><a href="{% url 'account_logout' %}">Sign Out</a></p>
     {% else %}
     <p>You are not logged in</p>

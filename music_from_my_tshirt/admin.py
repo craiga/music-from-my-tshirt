@@ -14,3 +14,4 @@ class User(UserAdmin):
 
 
 admin.site.register(models.User, User)
+admin.site.register(models.Song)

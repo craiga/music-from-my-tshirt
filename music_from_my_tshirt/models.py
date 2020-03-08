@@ -12,6 +12,14 @@ class User(AbstractUser):
 
 
 class Song(TimeStampedModel):
+    """A song. Probably from a user's t-shirt."""
+
     artist = models.TextField()
-    song = models.TextField()
+    title = models.TextField()
     url = models.URLField("URL")
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
+
+    def __str__(self):
+        return "{} by {} shared by {} on {}".format(
+            self.title, self.artist, self.user, self.created
+        )
