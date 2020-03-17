@@ -5,7 +5,7 @@
     "prettier": "$(npm bin)/prettier"
   },
   "dependencies": {
-    "cypress": "^4.1.0",
+    "cypress": "^4.2.0",
     "prettier": "^1.19.1",
     "wait-on": "^4.0.1"
   }
