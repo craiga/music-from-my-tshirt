@@ -2,19 +2,11 @@ describe("Share a song", () => {
   it("Can share a song", () => {
     cy.visit("/");
     cy.contains("Share a Song").click();
-    cy.contains("label", "Email")
-      .click()
-      .type("test-user@example.com");
-    cy.contains("label", "Password")
-      .click()
-      .type("test password");
+    cy.contains("label", "Email").click().type("test-user@example.com");
+    cy.contains("label", "Password").click().type("test password");
     cy.contains("button", "Sign In").click();
-    cy.contains("label", "Artist")
-      .click()
-      .type("Tankerville");
-    cy.contains("label", "Title")
-      .click()
-      .type("Bible Bashers Hitler Youth");
+    cy.contains("label", "Artist").click().type("Tankerville");
+    cy.contains("label", "Title").click().type("Bible Bashers Hitler Youth");
     cy.contains("label", "URL")
       .click()
       .type(
