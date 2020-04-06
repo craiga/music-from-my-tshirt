@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "cypress": "^4.3.0",
-    "prettier": "^2.0.2",
+    "prettier": "^2.0.4",
     "wait-on": "^4.0.1"
   }
 }
